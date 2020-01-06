@@ -20,7 +20,7 @@
     "@types/react-native": "0.60.28",
     "@babel/core": "7.7.7",
     "babel-preset-expo": "8.0.0",
-    "typescript": "3.6.4"
+    "typescript": "3.7.4"
   },
   "private": true
 }
