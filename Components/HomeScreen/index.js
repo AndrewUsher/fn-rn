@@ -1,5 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
+import styled from 'styled-components';
+
+const Text = styled.Text`
+color: red;
+`
 
 class HomeScreen extends React.Component {
   render () {
