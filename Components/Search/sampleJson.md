@@ -1,0 +1,218 @@
+response: Object {
+  "config": Object {
+    "adapter": [Function xhrAdapter],
+    "data": undefined,
+    "headers": Object {
+      "Accept": "application/json, text/plain, */*",
+    },
+    "maxContentLength": -1,
+    "method": "get",
+    "timeout": 0,
+    "transformRequest": Array [
+      [Function transformRequest],
+    ],
+    "transformResponse": Array [
+      [Function transformResponse],
+    ],
+    "url": "https://superheroapi.com/api/729084498444/search/Batman",
+    "validateStatus": [Function validateStatus],
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+  },
+  "data": Object {
+    "response": "success",
+    "results": Array [
+      Object {
+        "appearance": Object {
+          "eye-color": "Blue",
+          "gender": "Male",
+          "hair-color": "Black",
+          "height": Array [
+            "5'10",
+            "178 cm",
+          ],
+          "race": "Human",
+          "weight": Array [
+            "170 lb",
+            "77 kg",
+          ],
+        },
+        "biography": Object {
+          "aliases": Array [
+            "Batman II",
+            "The Tomorrow Knight",
+            "The second Dark Knight",
+            "The Dark Knight of Tomorrow",
+            "Batman Beyond",
+          ],
+          "alignment": "good",
+          "alter-egos": "No alter egos found.",
+          "first-appearance": "Batman Beyond #1",
+          "full-name": "Terry McGinnis",
+          "place-of-birth": "Gotham City, 25th Century",
+          "publisher": "DC Comics",
+        },
+        "connections": Object {
+          "group-affiliation": "Batman Family, Justice League Unlimited",
+          "relatives": "Bruce Wayne (biological father), Warren McGinnis (father, deceased), Mary McGinnis (mother), Matt McGinnis (brother)",
+        },
+        "id": "69",
+        "image": Object {
+          "url": "https://www.superherodb.com/pictures2/portraits/10/100/10441.jpg",
+        },
+        "name": "Batman",
+        "powerstats": Object {
+          "combat": "90",
+          "durability": "55",
+          "intelligence": "81",
+          "power": "63",
+          "speed": "29",
+          "strength": "40",
+        },
+        "work": Object {
+          "base": "21st Century Gotham City",
+          "occupation": "-",
+        },
+      },
+      Object {
+        "appearance": Object {
+          "eye-color": "blue",
+          "gender": "Male",
+          "hair-color": "black",
+          "height": Array [
+            "6'2",
+            "188 cm",
+          ],
+          "race": "Human",
+          "weight": Array [
+            "210 lb",
+            "95 kg",
+          ],
+        },
+        "biography": Object {
+          "aliases": Array [
+            "Insider",
+            "Matches Malone",
+          ],
+          "alignment": "good",
+          "alter-egos": "No alter egos found.",
+          "first-appearance": "Detective Comics #27",
+          "full-name": "Bruce Wayne",
+          "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+          "publisher": "DC Comics",
+        },
+        "connections": Object {
+          "group-affiliation": "Batman Family, Batman Incorporated, Justice League, Outsiders, Wayne Enterprises, Club of Heroes, formerly White Lantern Corps, Sinestro Corps",
+          "relatives": "Damian Wayne (son), Dick Grayson (adopted son), Tim Drake (adopted son), Jason Todd (adopted son), Cassandra Cain (adopted ward)
+Martha Wayne (mother, deceased), Thomas Wayne (father, deceased), Alfred Pennyworth (former guardian), Roderick Kane (grandfather, deceased), Elizabeth Kane (grandmother, deceased), Nathan Kane (uncle, deceased), Simon Hurt (ancestor), Wayne Family",
+        },
+        "id": "70",
+        "image": Object {
+          "url": "https://www.superherodb.com/pictures2/portraits/10/100/639.jpg",
+        },
+        "name": "Batman",
+        "powerstats": Object {
+          "combat": "100",
+          "durability": "50",
+          "intelligence": "100",
+          "power": "47",
+          "speed": "27",
+          "strength": "26",
+        },
+        "work": Object {
+          "base": "Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower",
+          "occupation": "Businessman",
+        },
+      },
+      Object {
+        "appearance": Object {
+          "eye-color": "Blue",
+          "gender": "Male",
+          "hair-color": "Black",
+          "height": Array [
+            "5'10",
+            "178 cm",
+          ],
+          "race": "Human",
+          "weight": Array [
+            "175 lb",
+            "79 kg",
+          ],
+        },
+        "biography": Object {
+          "aliases": Array [
+            "Dick Grayson",
+          ],
+          "alignment": "good",
+          "alter-egos": "Nightwing, Robin",
+          "first-appearance": "-",
+          "full-name": "Dick Grayson",
+          "place-of-birth": "-",
+          "publisher": "Nightwing",
+        },
+        "connections": Object {
+          "group-affiliation": "Justice League Of America, Batman Family",
+          "relatives": "John Grayson (father, deceased), Mary Grayson (mother, deceased), Bruce Wayne / Batman (adoptive father), Damian Wayne / Robin (foster brother), Jason Todd / Red Hood (adoptive brother), Tim Drake / Red Robin (adoptive brother), Cassandra Cain / Batgirl IV (adoptive sister)",
+        },
+        "id": "71",
+        "image": Object {
+          "url": "https://www.superherodb.com/pictures2/portraits/10/100/1496.jpg",
+        },
+        "name": "Batman II",
+        "powerstats": Object {
+          "combat": "100",
+          "durability": "28",
+          "intelligence": "88",
+          "power": "36",
+          "speed": "33",
+          "strength": "11",
+        },
+        "work": Object {
+          "base": "Gotham City; formerly Bludhaven, New York City",
+          "occupation": "-",
+        },
+      },
+    ],
+    "results-for": "Batman",
+  },
+  "headers": Object {
+    "access-control-allow-headers": "X-Requested-With",
+    "access-control-allow-methods": "GET",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=0",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "5513f1df0decb5d6-MEM",
+    "content-type": "application/json",
+    "date": "Tue, 07 Jan 2020 06:41:14 GMT",
+    "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+    "server": "cloudflare",
+    "x-powered-by": "PHP/7.2.25",
+    "x-turbo-charged-by": "LiteSpeed",
+  },
+  "request": XMLHttpRequest {
+    "DONE": 4,
+    "HEADERS_RECEIVED": 2,
+    "LOADING": 3,
+    "OPENED": 1,
+    "UNSENT": 0,
+    "_aborted": false,
+    "_cachedResponse": undefined,
+    "_hasError": false,
+    "_headers": Object {
+      "accept": "application/json, text/plain, */*",
+    },
+    "_incrementalEvents": false,
+    "_lowerCaseResponseHeaders": Object {
+      "access-control-allow-headers": "X-Requested-With",
+      "access-control-allow-methods": "GET",
+      "access-control-allow-origin": "*",
+      "cache-control": "public, max-age=0",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "5513f1df0decb5d6-MEM",
+      "content-type": "application/json",
+      "date": "Tue, 07 Jan 2020 06:41:14 GMT",
+      "expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "server": "cloudflare",
+      "x-powered-by": "PHP/7.2.25",
+      "x-turbo-charged-by": "LiteSpeed",
+    },
