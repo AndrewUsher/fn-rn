@@ -16,6 +16,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-screens": "2.0.0-alpha.12",
     "react-native-web": "0.11.7",
+    "restful-react": "^9.6.1",
     "styled-components": "4.4.1"
   },
   "devDependencies": {
