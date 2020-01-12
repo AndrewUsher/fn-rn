@@ -1,15 +1,12 @@
 import React, { useState, useRef } from 'react'
-import { TouchableHighlight, StyleSheet, SafeAreaView, Platform, View } from 'react-native'
-// import ViewOverflow from 'react-native-view-overflow'
+import { TouchableHighlight, StyleSheet, Platform, View } from 'react-native'
 import styled from 'styled-components'
 import axios from 'axios'
 import { SearchBar, Button } from 'react-native-elements'
 import Modal from 'react-native-modal'
 import Swiper from 'react-native-deck-swiper'
 import IconButton from '../IconButton'
-import OverlayLabel from '../OverlayLabel'
 import Card from '../Card'
-import searchStyles from './searchStyles.js'
 
 // https://superheroapi.com/api/access-token/search/name
 // 729084498444
@@ -17,15 +14,6 @@ import searchStyles from './searchStyles.js'
 const API_TOKEN = '729084498444'
 const baseUrl = `https://superheroapi.com/api/${API_TOKEN}`
 const apiEndPoint = '/search/'
-
-// const View = styled.View`
-// background-color: #4d4646;
-// display: flex;
-// padding-bottom: 16px;
-// justify-content: flex-start;
-// align-items: center;
-// height: 100%;
-// `
 
 const Image = styled.Image`
 margin-top: 50px;
