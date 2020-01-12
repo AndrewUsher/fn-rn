@@ -11,6 +11,7 @@ const baseUrl = `https://superheroapi.com/api/${API_TOKEN}`
 const apiEndPoint = '/search/'
 
 const View = styled.View`
+background-color: #4d4646;
 display: flex;
 padding-bottom: 16px;
 justify-content: flex-start;
@@ -27,13 +28,20 @@ height: 200px;
 `
 
 const containerTheme = {
+  backgroundColor: '#4d4646',
+  borderBottomWidth: 0,
+  borderTopWidth: 0,
   width: '100%',
   marginTop: 40,
   marginBottom: 16,
   paddingBottom: 16
 }
 
-function Search () {
+const inputContainerStyle = {
+  backgroundColor: '#f2f2f2'
+}
+
+function Search() {
   const [superHeroInput, setSuperHeroInput] = React.useState('')
   const [superHeroImage, setSuperHeroImage] = React.useState('')
 
@@ -44,6 +52,8 @@ function Search () {
       setSuperHeroImage(response.data.results[0].image.url)
     } catch (error) {
       console.log(error)
+    } finally {
+      setSuperHeroInput('')
     }
   }
 
@@ -51,7 +61,8 @@ function Search () {
     <View>
       <SearchBar
         containerStyle={containerTheme}
-        placeholder="Search SuperHero"
+        inputContainerStyle={inputContainerStyle}
+        placeholder="Search Superhero"
         value={superHeroInput}
         onChangeText={setSuperHeroInput}
       />
