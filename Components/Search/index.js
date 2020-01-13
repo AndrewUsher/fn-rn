@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { TouchableHighlight, StyleSheet, Platform, View } from 'react-native'
+// import { Wave, Animate, Composing, AnimationType } from 'react-native-wave'
 import styled from 'styled-components'
 import axios from 'axios'
 import { SearchBar, Button } from 'react-native-elements'
@@ -150,19 +151,26 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  errorMsg: {
+    color: 'red',
+    padding: 16
   }
 })
 
 const Search = () => {
   const [superHeroInput, setSuperHeroInput] = useState('')
+  const [noData, setNoData] = useState(false)
   const [superHeroImage, setSuperHeroImage] = useState('')
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [superHeroData, setSuperHeroData] = useState('')
   const [powerData, setPowerData] = useState([])
+  const [fullName, setFullName] = useState('')
+  const [showLoading, setShowLoading] = useState(false)
   const swiperRef = useRef(null)
 
   const nameCards = [
-    { key: 1, name: 'greg', age: 33, data: powerData },
+    { key: 1, name: fullName, age: 33, data: powerData },
     { key: 2, name: 'sky', age: 31, data: [] },
     { key: 3, name: 'carmelo', age: 8, data: [] },
     { key: 4, name: 'Semira', age: 2, data: [] },
@@ -199,19 +207,30 @@ const Search = () => {
     return setPowerData(dataArr)
   }
 
+  const trimText = str => str && str.replace(/^,+|,+$/gm, '')
+
   const getHeroInfo = async searchInput => {
-    const fullURL = `${baseUrl}${apiEndPoint}${superHeroInput}`
+    const cleanedInput = superHeroInput.trim()
+    const fullURL = `${baseUrl}${apiEndPoint}${cleanedInput}`
     try {
+      setShowLoading(true)
       const response = await axios.get(fullURL)
-      const image = response && response.data.results[0].image.url
       const results = response && response.data.results
-      const powerStats = response && response.data.results[0].powerstats
+      const heroOnly = results.filter(elem => elem.name.toLowerCase() === superHeroInput.toLowerCase())[0]
+      const image = heroOnly && heroOnly.image.url
+      const powerStats = heroOnly && heroOnly.powerstats
+      const birthName = heroOnly && heroOnly.biography['full-name']
+      const akaText = heroOnly && heroOnly.biography.aliases[0] !== '-' ? trimText(heroOnly && heroOnly.biography.aliases.join(', ')) : ''
+      const fullName = akaText ? `${birthName} AKA ${akaText}` : `${birthName}`
+      setFullName(fullName)
       setSuperHeroImage(image)
-      setSuperHeroData(results)
+      setSuperHeroData(heroOnly)
       makePowerDataFn(powerStats)
     } catch (error) {
+      setNoData(true)
       console.log(error)
     } finally {
+      setShowLoading(false)
       setSuperHeroInput('')
     }
     // console.log('superHeroData', superHeroData)
@@ -224,7 +243,9 @@ const Search = () => {
         placeholder="Search Superhero"
         value={superHeroInput}
         onChangeText={setSuperHeroInput}
+        showLoading={showLoading}
       />
+      {/* {noData && <Text style={styles.errorMsg}>Sorry, no results for {superHeroInput}</Text>} */}
       <Button
         disabled={!superHeroInput}
         title={'Get Super Info!'}
@@ -236,7 +257,7 @@ const Search = () => {
         <Image source={{ uri: superHeroImage }} />
       </TouchableHighlight>
       <Modal style={styles.modalStyle} backdropOpacity={0.9} isVisible={isModalOpen}>
-        <Text>{superHeroData && superHeroData[0].name}</Text>
+        <Text>{superHeroData && superHeroData.name}</Text>
         <View style={styles.swiperContainer}>
           <Swiper
             ref={swiperRef}

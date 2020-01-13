@@ -10,7 +10,7 @@ const Card = ({ card }) => {
     <View style={styles.photoDescriptionContainer}>
       <PieChartWithCenteredLabels data={card && card.data} />
       <Text style={styles.text}>
-        {`${card.name}, ${card.age}`}
+        {`${card.name}`}
       </Text>
     </View>
   </View>

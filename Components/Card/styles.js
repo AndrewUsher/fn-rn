@@ -41,8 +41,8 @@ export default StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    fontSize: 20,
-    color: 'white',
+    fontSize: 16,
+    color: 'black',
     fontFamily: 'System',
     textShadowColor: 'black',
     textShadowRadius: 10

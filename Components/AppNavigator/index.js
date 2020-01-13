@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation'
 import { createDrawerNavigator } from 'react-navigation-drawer'
 import HomeScreen from '../HomeScreen'
-import Search from '../Search'
+import Search from '../../containers/Search'
 
 const DrawerNavigatorConfig = {
   drawerBackgroundColor: 'gold'
