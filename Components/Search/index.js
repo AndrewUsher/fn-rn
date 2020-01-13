@@ -158,15 +158,15 @@ const Search = () => {
   const [superHeroImage, setSuperHeroImage] = useState('')
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [superHeroData, setSuperHeroData] = useState('')
+  const [powerData, setPowerData] = useState([])
   const swiperRef = useRef(null)
-  // console.log('TCL: Search -> swiperRef', swiperRef)
 
   const nameCards = [
-    { key: 1, name: 'greg', age: 33 },
-    { key: 2, name: 'sky', age: 31 },
-    { key: 3, name: 'carmelo', age: 8 },
-    { key: 4, name: 'Semira', age: 2 },
-    { key: 5, name: 'money', age: 522 }
+    { key: 1, name: 'greg', age: 33, data: powerData },
+    { key: 2, name: 'sky', age: 31, data: [] },
+    { key: 3, name: 'carmelo', age: 8, data: [] },
+    { key: 4, name: 'Semira', age: 2, data: [] },
+    { key: 5, name: 'money', age: 522, data: [] }
   ]
 
   const shuffleCards = (array) => {
@@ -183,14 +183,32 @@ const Search = () => {
     swiperRef.current.swipeRight()
   }
 
+  const randomColor = () => ('#' + (Math.random() * 0xFFFFFF << 0).toString(16) + '000000').slice(0, 7)
+
+  const makePowerDataFn = (data) => {
+    const dataArr = []
+    const tempDataArr = Object.entries(data)
+    tempDataArr.map((elem, idx) => {
+      dataArr.push({
+        key: idx,
+        amount: parseInt(elem[1], 10),
+        label: elem[0],
+        svg: { fill: randomColor() }
+      })
+    })
+    return setPowerData(dataArr)
+  }
+
   const getHeroInfo = async searchInput => {
     const fullURL = `${baseUrl}${apiEndPoint}${superHeroInput}`
     try {
       const response = await axios.get(fullURL)
       const image = response && response.data.results[0].image.url
       const results = response && response.data.results
+      const powerStats = response && response.data.results[0].powerstats
       setSuperHeroImage(image)
       setSuperHeroData(results)
+      makePowerDataFn(powerStats)
     } catch (error) {
       console.log(error)
     } finally {
@@ -237,8 +255,8 @@ const Search = () => {
               }
             }
             onSwipedBottom={
-              (e) => {
-                console.log(`swiped BOTTOM current index is: ${e}`)
+              () => {
+                setIsModalOpen(false)
               }
             }
             useViewOverflow={Platform.OS === 'ios'}
