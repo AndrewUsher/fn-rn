@@ -37,7 +37,7 @@
     "styled-components": "4.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.7.7",
+    "@babel/core": "7.25.9",
     "@drewster/eslint-config": "1.0.2",
     "babel-preset-expo": "8.0.0",
     "eslint": "6.8.0"
